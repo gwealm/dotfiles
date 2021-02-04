@@ -1,6 +1,6 @@
 # Dotfiles
 
-Printscreen taken with [neofetch](https://github.com/dylanaraps/neofetch)
+Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
 ![](/others/neofetch.png)
 
