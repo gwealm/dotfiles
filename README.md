@@ -4,7 +4,7 @@ Printscreen taken with [neofetch](https://github.com/dylanaraps/neofetch)
 
 ![](/others/neofetch.png)
 
-
+\
 ![](/others/wallpaper.png)
 
 
