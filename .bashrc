@@ -2,13 +2,8 @@
 # ~/.bashrc
 #
 
-#Turn on start
+#Turns on neofetch when a new terminal is opened
 neofetch --ascii_distro Arch
-
-
-
-
-
 
 
 #My aliases
