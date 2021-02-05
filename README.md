@@ -24,8 +24,6 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 \
 **Development Environment**: VSCode
 
-**Document Viewer**: Zathura
-
 **File Manager**: Thunar
 
 **Audio**: pavucontrol 
