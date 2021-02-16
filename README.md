@@ -2,7 +2,7 @@
 
 Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
-![](/others/neofetch.png)
+![](/others/system.png)
 
 \
 ![](/others/wallpaper.png)
@@ -12,6 +12,10 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
 \
 **OS**: EndeavourOS
+
+**Shell**: Zsh
+
+**Terminal**: Gnome-terminal
 
 **LockScreen**: i3lock
 
