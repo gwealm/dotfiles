@@ -234,7 +234,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # This does not work, see https://wiki.archlinux.org/index.php/I3#Default_workspace_for_Spotify
 # assign [class="[sS]potify"] $workspace4
-assign [class = "firefox"] $workspace2
+assign [class = "Firefox Developer Edition"] $workspace2
 assign [class = "Chromium"] $workspace2
 for_window [class="Spotify"] move to workspace $workspace8
 assign [class="discord"] $workspace5
@@ -288,7 +288,7 @@ bindsym $mod+r mode "resize"
 
 
 # App shortcuts
-bindsym $mod+w exec "/usr/bin/firefox"
+bindsym $mod+w exec "/opt/firefox/firefox"
 bindsym $mod+n exec "/usr/bin/thunar"
 
 # Redirect sound to headphones
@@ -327,26 +327,6 @@ client.urgent 			$urgent-border	 		$urgent-bg-color   $text-color 		#00ff00
 
 client.background		$bg-color
 
-hide_edge_borders both
-
-
-
-#Maybe I'll switch to polybar, but for now I'm ok with i3blocks and I actually enjoy it
-bar {
-     verbose yes
-     status_command i3blocks -c /home/gui1612/.config/i3/i3blocks/i3blocks.conf 
-     tray_output primary
-     font pango:System San Francisco Display 9 
-     colors {
- 		background $bg-color
- 	    	separator #757575
- 		#                  border             background         text
- 		focused_workspace  $bg-color          $bg-color          $text-color
- 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
- 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
- 	}
- }
-
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
@@ -378,13 +358,9 @@ bindsym F10 exec rofi -show window -line-padding 4 \
 
 exec_always:
 
-exec_always feh --bg-scale /home/gui1612/Pictures/Wallpapers/arch2.png
+exec_always feh --bg-scale /home/gui1612/Pictures/Wallpapers/react.jpg
+
 exec sh ~/.config/i3/mouse.sh
-
-
-
-
-
 
 
 # Pulse Audio controls
@@ -466,3 +442,12 @@ exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
 # exec --no-startup-id xfce4-session
 # Moved to no DE <3 (XDG Autostart via dex was very helpful)
 
+
+hide_edge_borders smart
+
+#Polybar launch script
+#bash ~/.config/polybar.old/launch.sh --hack
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+exec_always --no-startup-id sh -c "pkill fusuma && fusuma -d"
