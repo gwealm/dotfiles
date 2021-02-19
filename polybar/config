@@ -75,40 +75,6 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/screen_autolock]
-type = custom/script
-
-exec = $HOME/.config/polybar/scripts/autolock_polybar.sh
-
-interval = 1
-
-format = <label>
-
-;No need for truncating since only 1 character is being displayed
-label = %output%
-
-;tail = true
-
-; Clicking with left button toggles the autolock state
-click-left = exec $HOME/.config/polybar/scripts/toggle_autolock.sh
-
-[module/dunst_mute]
-type = custom/script
-
-exec = $HOME/.config/polybar/scripts/display_dunst_mute.sh
-
-interval = 1
-
-format = <label>
-
-;No need for truncating since only 1 character is being displayed
-label = %output%
-
-;tail = true
-
-; Clicking with left button toggles the notification mute state
-click-left = exec $HOME/.config/polybar/scripts/toggle_dunst_mute.sh
-
 [module/filesystem]
 type = internal/fs
 interval = 25

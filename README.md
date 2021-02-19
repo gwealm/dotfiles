@@ -13,7 +13,11 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 \
 **OS**: EndeavourOS
 
-**Shell**: Zsh
+**Aur helper**: yay
+
+**Shell**: Zsh (theme: [Powerlevel10k](https://github.com/romkatv/powerlevel10k))
+
+**Bar**: Polybar
 
 **Terminal**: Gnome-terminal
 
@@ -23,13 +27,15 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
 **Launcher**: Rofi
 
-**Browser**: Firefox
+**Browser**: Firefox Developer Edition
 
 \
 **Development Environment**: VSCode
 
 **File Manager**: Thunar
 
-**Audio**: pavucontrol 
+**Audio**: pavucontrol
+
+**Multitouch gesture recognizer**: Fusuma
 
 **Text Editor**: Vim
