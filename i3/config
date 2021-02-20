@@ -69,7 +69,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec termite
 
 
 # kill focused window:
@@ -328,6 +328,26 @@ client.urgent 			$urgent-border	 		$urgent-bg-color   $text-color 		#00ff00
 client.background		$bg-color
 
 
+
+
+#Maybe I'll switch to polybar, but for now I'm ok with i3blocks and I actually enjoy it
+
+# bar {
+#      verbose yes
+#      status_command i3blocks -c /home/gui1612/.config/i3/i3blocks/i3blocks.conf 
+#      tray_output primary
+#      font pango:System San Francisco Display 9 
+#      colors {
+#  		background $bg-color
+#  	    	separator #757575
+#  		#                  border             background         text
+#  		focused_workspace  $bg-color          $bg-color          $text-color
+#  		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#  		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  	}
+#  }
+
+
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
 
@@ -360,7 +380,14 @@ exec_always:
 
 exec_always feh --bg-scale /home/gui1612/Pictures/Wallpapers/react.jpg
 
+
+
 exec sh ~/.config/i3/mouse.sh
+
+
+
+
+
 
 
 # Pulse Audio controls

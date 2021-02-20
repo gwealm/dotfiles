@@ -19,7 +19,7 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
 **Bar**: Polybar
 
-**Terminal**: Gnome-terminal
+**Terminal**: Termite
 
 **LockScreen**: i3lock
 
