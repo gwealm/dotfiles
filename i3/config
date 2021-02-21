@@ -144,14 +144,6 @@ exec dunst -conf ~/.config/i3/dunstconf
 # exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec_always --no-startup-id sh -c "pkill fusuma && fusuma -d"
 
-
-
-
-
-# transparency:
-#exec --no-startup-id xcompmgr -c
-#exec --no-startup-id picom -cC
-
 #set wallpaper:
 exec --no-startup-id nitrogen --restore
 
@@ -193,16 +185,6 @@ set $workspace8 "8: Music "
 set $workspace9 "9: Others "
 
 
-
-#TODO: assign workspaces to different screens
-
-#set $main_monitor eDP1
-#set $second_monitor HDMI1
-#Binding Workspaces to screen
-#workspace $ws2 output $second_monitor
-
-
-
 # switch to workspace
 bindsym $mod+backslash workspace $workspace0
 bindsym $mod+1 workspace $workspace1
@@ -236,15 +218,24 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 # assign [class="[sS]potify"] $workspace4
 assign [class = "Firefox Developer Edition"] $workspace2
 assign [class = "Chromium"] $workspace2
+
 for_window [class="Spotify"] move to workspace $workspace8
+
 assign [class="discord"] $workspace5
-assign [class="Thunderbird"] $workspace6
 assign [class="Slack"] $workspace5
-assign [class = "Pulseeffects"] $workspace9
-assign [class = "Pavucontrol"] $workspace9
+
+assign [class="Thunderbird"] $workspace6
+
 assign [class = "Spyder"] $workspace4
 assign [class = "Code"] $workspace4
+assign [class = "jetbrains-clion"] $workspace4
+assign [class = "jetbrains-webstorm"] $workspace4
+assign [class = "jetbrains-idea"] $workspace4
+
 assign [class = "zoom"] $workspace0
+assign [class = "microsoft teams - preview"] $workspace0
+
+
 
 
 
@@ -260,11 +251,6 @@ bindsym $mod+Shift+q exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
 # resize window (you can also use the mouse for that):
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # prshrinK essing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink height 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink width 10 px or 10 ppt
@@ -331,7 +317,7 @@ client.background		$bg-color
 
 
 #Maybe I'll switch to polybar, but for now I'm ok with i3blocks and I actually enjoy it
-
+#I'm keeping this for the possibility of bring stuck with i3blocks, however I don't plan to ever stop use polybar
 # bar {
 #      verbose yes
 #      status_command i3blocks -c /home/gui1612/.config/i3/i3blocks/i3blocks.conf 
@@ -369,8 +355,6 @@ bindsym F10 exec rofi -show window -line-padding 4 \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"                
                 
 
-#Mousepad natural scrolling fix and buttons activation
-#exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113 TapButton3=1
 #Now editing /usr/share/X11/xorg.conf.d/40-libinput.conf for the same effects
 
 ## Keybindings for system keys (All here)
@@ -380,14 +364,7 @@ exec_always:
 
 exec_always feh --bg-scale /home/gui1612/Pictures/Wallpapers/react.jpg
 
-
-
 exec sh ~/.config/i3/mouse.sh
-
-
-
-
-
 
 
 # Pulse Audio controls
@@ -408,11 +385,6 @@ bindsym XF86MonBrightnessDown exec "light -U 10;"
 # get current screen brightness
 bindsym Shift+XF86MonBrightnessUp exec "notify-send 'Brightness at ' $(light -G)"
 
-# Touchpad controls
-#toggle touchpad
-#doesn't work at the moment 
-#bindsym XF86TouchpadToggle exec ~/.config/i3/scripts/toggletouchpad.sh
-
 # Media player controls (Requires playerctl)
 # Have to use play-pause since play button is the same as the pause one for my pc
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -420,7 +392,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-## Lock Screen
+## Lock Screen(TODO: Change the lockscreen)
 # i3 config file does not support using environment variables so scripts/configs.sh cannot be used, sadly
 # as such, using a symlink! Why try to complicate a solved problem??
 #set $lockerscript "~/.config/i3/scripts/screen_locker.sh"
