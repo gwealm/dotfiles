@@ -30,7 +30,7 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 **Browser**: Firefox Developer Edition
 
 \
-**Development Environment**: VSCode
+**Development Environment**: VSCode ([my extensions](https://gist.github.com/gui1612/98bfc755f8358da4f0d40b6f5a213c2a))
 
 **File Manager**: Thunar
 
