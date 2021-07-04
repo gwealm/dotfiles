@@ -2,11 +2,7 @@
 
 Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
-![](/others/system.png)
-
-\
-![](/others/wallpaper.png)
-
+![](/others/screenshot1.png)
 
 ## Applications
 
@@ -19,15 +15,15 @@ Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
 **Bar**: Polybar
 
-**Terminal**: Termite
+**Terminal**: Alacritty
 
-**LockScreen**: i3lock
+**LockScreen**: betterlockscreen
 
 **Compositor**: Compton
 
 **Launcher**: Rofi
 
-**Browser**: Firefox Developer Edition
+**Browser**: Firefox Developer Edition / Brave
 
 \
 **Development Environment**: VSCode ([my extensions](https://gist.github.com/gui1612/98bfc755f8358da4f0d40b6f5a213c2a))
