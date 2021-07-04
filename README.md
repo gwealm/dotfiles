@@ -2,7 +2,7 @@
 
 Used [neofetch](https://github.com/dylanaraps/neofetch) for the printscreen
 
-![](/others/screenshot1.png)
+![](/pictures/screenshot1.png)
 
 ## Applications
 
