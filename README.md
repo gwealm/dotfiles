@@ -1,9 +1,7 @@
-Prints were taken with Neofetch
-
 ![Main Screen](assets/main.png)
 ![Widget Screen](assets/sec.png)
 
-#Applications
+# Applications
 
 *OS:* Arch Linux
 
