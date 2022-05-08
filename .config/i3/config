@@ -1,0 +1,350 @@
+# Setting cmd as mod-key
+set $mod Mod1
+
+# workspace layouts:
+#default i3 tiling mode
+workspace_layout default
+
+#Needed for i3-gaps
+#hide_edge_borders both
+for_window [class="^.*"] border pixel 2 
+gaps inner 15 
+gaps outer 15
+
+bindsym $mod+z		gaps outer current plus 5
+bindsym $mod+Shift+z	gaps outer current minus 5for_window [class="^.*"] border pixel 2
+
+#do not show titlebar on windows: 
+new_window 1pixel
+
+#workspace_layout stacking
+#workspace_layout tabbed
+
+#Tiling mode is tabbed:
+#so each new window will open fullscreen as a tab, you can change between window-tabs with mouse or shortcut:
+#    [mod]+Left focus left (left arrow key)
+#    [mod]+Right focus right (right arrow key)
+
+
+# Font
+ # font pango:Noto Sans Regular 11
+#font pango: Ubuntu 8
+font pango: System San Francisco Display 9
+
+# thin borders:
+hide_edge_borders both
+
+# Use Mouse+$mod to drag floating windows to their wanted position:
+floating_modifier $mod
+
+
+###Binds
+#
+# start a terminal
+bindsym $mod+Return exec alacritty --working-directory ~
+
+# kill focused window
+bindsym $mod+c kill
+
+# App menu widget
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/misc/launcher.sh
+
+
+# change focus:
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+u focus up
+bindsym $mod+ntilde focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window:
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ntilde move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation:
+bindsym $mod+h split h
+
+# split in vertical orientation:
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container:
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split):
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
+
+# toggle tiling / floating:
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows:
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container:
+bindsym $mod+a focus parent
+
+bindsym $mod+s exec --no-startup-id ~/.config/i3/scripts/empty_workspace.sh
+
+# reload the configuration file:
+bindsym $mod+Shift+c reload
+
+# restart i3:
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session):
+bindsym $mod+Shift+q exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+
+
+# Execs on startup
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart
+exec dunst -conf ~/.config/i3/dunstconf
+exec_always:
+exec sh ~/.config/i3/mouse.sh
+exec_always --no-startup-id picom -bf --experimental-backend
+
+exec_always --no-startup-id bash ~/.config/polybar/launch.sh --blocks
+
+exec_always --no-startup-id sh -c "pkill fusuma && fusuma -d"
+#set wallpaper:
+exec --no-startup-id nitrogen --restore
+
+#set powersavings for display:
+exec --no-startup-id xset s 480 dpms 600 600 600
+
+# Desktop notifications_
+exec --no-startup-id /usr/bin/dunst
+
+# Set Floating display
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Steam" instance="Steam"] floating enable
+for_window [class="PacketTracer"] floating enable
+
+# resize floating windows with mouse scroll:
+bindsym --whole-window --border $mod+button4 resize shrink height 5 px or 5 ppt
+bindsym --whole-window --border $mod+button5 resize grow height 5 px or 5 ppt
+bindsym --whole-window --border $mod+shift+button4 resize shrink width 5 px or 5 ppt
+bindsym --whole-window --border $mod+shift+button5 resize grow width 5 px or 5 ppt
+
+## Workspaces
+set $workspace0 "0: Meetings "
+set $workspace1 "1: Terminals "
+set $workspace2 "2: Firefox "
+set $workspace3 "3: FEUP "
+set $workspace4 "4: IDE "
+set $workspace5 "5: Social "
+set $workspace6 "6: Mail "
+set $workspace7 "7: Projs "
+set $workspace8 "8: Music "
+set $workspace9 "9: Others "
+
+
+#TODO: assign workspaces to different screens
+#set $main_monitor eDP1
+#set $second_monitor HDMI1
+#Binding Workspaces to screen
+#workspace $ws2 output $second_monitor
+
+
+# switch to workspace
+bindsym $mod+backslash workspace $workspace0
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace0
+
+# move focused container to workspace
+bindsym $mod+Shift+backslash move container to workspace $workspace0
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace0
+
+
+## Windows in default workspaces assignment
+
+# This does not work, see https://wiki.archlinux.org/index.php/I3#Default_workspace_for_Spotify
+# assign [class="[sS]potify"] $workspace4
+# assign [class="[sS]potify"] $workspace4
+assign [class = "firefoxdeveloperedition"] $workspace2
+assign [class = "Chromium"] $workspace2
+
+for_window [class="Spotify"] move to workspace $workspace8
+
+assign [class="discord"] $workspace5
+assign [class="Slack"] $workspace5
+
+assign [class="Thunderbird"] $workspace6
+
+assign [class = "Spyder"] $workspace4
+assign [class = "Code"] $workspace4
+assign [class = "jetbrains-clion"] $workspace4
+assign [class = "jetbrains-webstorm"] $workspace4
+assign [class = "jetbrains-idea"] $workspace4
+assign [class = "Eclipse"] $workspace4
+
+assign [class = "zoom"] $workspace0
+assign [class = "microsoft teams - preview"] $workspace0
+
+
+
+# resize window (you can also use the mouse for that):
+mode "resize" {
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Multimedia Keys (not all of them):
+# Other system and multimedia keybeindings are at the end of the file
+
+
+# App shortcuts
+bindsym $mod+w exec "/usr/lib/firefox-developer-edition/firefox"
+bindsym $mod+n exec "/usr/bin/thunar"
+
+# Redirect sound to headphones
+bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
+
+
+# Color settings
+
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #424242
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #424242
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #424242
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #424242
+
+
+bindsym $mod+shift+x exec betterlockscreen -l dim
+
+# rofi bindings fancy application menu
+bindsym $mod+i exec rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+                
+bindsym F9 exec rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+
+bindsym $mod+o exec rofi -show window -line-padding 4 \
+                -lines 6 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+
+bindsym F10 exec rofi -show window -line-padding 4 \
+                -lines 6 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"                
+                
+
+## Keybindings for system keys (All here)
+
+# Pulse Audio controls
+# increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+# decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
+# mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+
+
+# Screen brightness controls
+# Using 'light' -> https://github.com/haikarainen/light because xbacklight did not work for some reason
+# increase screen brightness
+bindsym XF86MonBrightnessUp exec "light -A 10;"
+# decrease screen brightness
+bindsym XF86MonBrightnessDown exec "light -U 10;"
+# get current screen brightness
+bindsym Shift+XF86MonBrightnessUp exec "notify-send 'Brightness at ' $(light -G)"
+
+# Touchpad controls
+#toggle touchpad
+#doesn't work at the moment 
+#bindsym XF86TouchpadToggle exec ~/.config/i3/scripts/toggletouchpad.sh
+
+# Media player controls (Requires playerctl)
+# Have to use play-pause since play button is the same as the pause one for my pc
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+## Lock Screen
+#bindsym $mod+Ctrl+l exec $lockerscript
+
+## Shortcuts
+bindsym Print exec --no-startup-id gnome-screenshot -i
+
+
+
+# Shutdown options menu
+
+set $mode_system exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
+
+# set $mode_system System (l) lock, (e) logout, (
+#bindsym $mod+End mode "$mode_system"
+bindsym $mod+End exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
+
+
+#Dual monitor settings:
+#exec --no-startup-id xrandr --output HDMI1 --auto
+exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
+
+
+# XDG Autostart (https://wiki.archlinux.org/index.php/XDG_Autostart) programs via their desktop entries using dex (https://github.com/jceb/dex)
+#exec dex -a -e i3
+
+
+# Other configs
+hide_edge_borders smart
