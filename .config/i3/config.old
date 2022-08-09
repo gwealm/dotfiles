@@ -1,8 +1,6 @@
 # Setting cmd as mod-key
 set $mod Mod1
 
-exec_always $HOME/.config/polybar/launch.sh
-
 # workspace layouts:
 #default i3 tiling mode
 workspace_layout default
@@ -119,16 +117,25 @@ exec_always:
 exec sh ~/.config/i3/mouse.sh
 exec_always --no-startup-id picom -bf --experimental-backend
 
+exec_always killall -q polybar
+exec_always --no-startup-id bash ~/.config/polybar/launch.sh --blocks
+
+#DIR="$HOME/.config/polybar/blocks"
+#exec_always killall -q polybar
+#exec_always polybar -q main -c $HOME/.config/polybar/blocks/config.ini &
 
 exec_always --no-startup-id sh -c "pkill fusuma && fusuma -d"
 #set wallpaper:
-exec_always --no-startup-id ~/.config/i3/scripts/set_wallpaper.sh
+exec --no-startup-id ~/.config/i3/scripts/set_wallpaper.sh
+
 
 #set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
 # Desktop notifications_
 exec --no-startup-id /usr/bin/dunst
+
+# Set Floating display
 
 # Set Floating display
 for_window [class="Yad" instance="yad"] floating enable
@@ -320,8 +327,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-## Lock Screen
 #bindsym $mod+Ctrl+l exec $lockerscript
 
 ## Shortcuts
