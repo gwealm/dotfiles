@@ -34,3 +34,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
