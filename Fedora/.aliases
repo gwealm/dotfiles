@@ -1,0 +1,30 @@
+# NeoVim alias
+alias vim="nvim"
+alias oldvim="nvim"
+alias vi="vim"
+
+# Commands
+alias ls="ls --color=auto"
+alias ll="ls -lav --ignore=.."
+
+
+alias grep='grep --color=auto'                                                                  
+alias fgrep='fgrep --color=auto'                                                                
+alias egrep='egrep --color=auto'           
+alias diff='diff --color=auto'                                                                  
+alias ip='ip --color=auto'
+
+# Docker
+alias lzd='lazydocker'
+
+# url encode/decode
+alias urldecode='python3 -c "import sys, urllib.parse as ul; \
+    print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; \
+    print (ul.quote_plus(sys.argv[1]))"'
+
+# misc
+alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
+alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
+alias zdot='cd ${ZDOTDIR:-~}'
+alias c="clear"
