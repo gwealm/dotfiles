@@ -1,7 +1,7 @@
 # Arch Linux
 
-![Main Screen](assets/main.png)
-![Widget Screen](assets/sec.png)
+![Main Screen](/Arch/assets/main.png)
+![Widget Screen](/Arch/assets/sec.png)
 
 ## Applications
 
