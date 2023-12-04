@@ -12,6 +12,7 @@ ohmyzsh/ohmyzsh path:plugins/magic-enter
 ohmyzsh/ohmyzsh path:plugins/pip 
 ohmyzsh/ohmyzsh path:plugins/sudo 
 ohmyzsh/ohmyzsh path:plugins/z 
+ohmyzsh/ohmyzsh path:plugins/kubectl 
 
 # you should use aliases 
 MichaelAquilina/zsh-you-should-use 

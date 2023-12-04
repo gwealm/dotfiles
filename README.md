@@ -1,7 +1,7 @@
 # Arch Linux
 
-![Main Screen](/Arch/assets/main.png)
-![Widget Screen](/Arch/assets/sec.png)
+![Main Screen](/assets/main.png)
+![Widget Screen](/assets/sec.png)
 
 ## Applications
 
@@ -37,7 +37,7 @@
 
 # Fedora
 
-Note: Since this year's, I've started using Fedora on my secondary machine, since I only do programming tasks in there and don't have much time to spend tweaking. I've always wanted to try fedora for its recent kernels, so here you go.
+Note: ~~Since this year's, I've started using Fedora on my secondary machine, since I only do programming tasks in there and don't have much time to spend tweaking.~~ Changed to Arch again, but I'm going to keep this here since it was a pretty straightforward setup.
 
 *OS:* Fedora Linux
 

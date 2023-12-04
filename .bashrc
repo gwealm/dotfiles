@@ -13,5 +13,4 @@ export PATH
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
-
-
+. "$HOME/.cargo/env"
